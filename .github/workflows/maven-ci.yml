@@ -81,7 +81,7 @@ jobs:
     needs: [maven_test]  # Enforces that maven_test runs first
     runs-on: ubuntu-latest
     steps:
-    - name: Restore cached build
+      - name: Restore cached build
         uses: actions/cache@v3
         with:
           key: cached-build-${{github.sha}}
