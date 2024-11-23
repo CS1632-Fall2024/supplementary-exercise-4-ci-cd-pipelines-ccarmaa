@@ -8,11 +8,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  
+
 
 jobs:
   
   # Runs the Maven test phase on the project
   maven_test:
+  
+  update_dependence_graph:
+    needs: [maven_test]  # Enforces that maven_test runs first
 
     runs-on: ubuntu-latest
 
